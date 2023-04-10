@@ -5,25 +5,29 @@
     >
     <div class="navbar-expand mr-auto">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" routerLink="/ROUTEUR_À_IMPLÉMENTER"
-          >Membres</a
-        >
-        <a class="nav-item nav-link active" routerLink="/ROUTEUR_À_IMPLÉMENTER"
-          >Reservation</a
+        <a class="nav-item nav-link active" routerLink="/membres">Membres</a>
+        <a class="nav-item nav-link active" routerLink="/reservations"
+          >Réservations</a
         >
       </div>
     </div>
   </nav>
 
   <div class="home" *ngIf="route == ''">
-    <p>Titre</p>
+    <div class="spinner">
+      <div class="spinner1"></div>
+    </div>
+    <p>
+      Bienvenue <br />à<br />
+      <span class="autopartage">Autopartage</span>
+    </p>
     <button
       mat-raised-button
       color="primary"
       class="btn"
-      routerLink="/ROUTEUR_À_IMPLÉMENTER"
+      routerLink="/reservations"
     >
-      Parcourir quelque chose...<mat-icon>arrow_right</mat-icon>
+      Voir les réservations &#10140;
     </button>
   </div>
   <router-outlet></router-outlet>

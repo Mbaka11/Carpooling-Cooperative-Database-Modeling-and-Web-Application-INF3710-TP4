@@ -16,6 +16,8 @@
         placeholder="Tapez le nom d'un membre ici"
         aria-label="searchMember"
         aria-describedby="searchMember"
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="onEnter($event.target.value)"
       />
     </div>
   </div>
@@ -39,27 +41,16 @@
       <th class="contentCell">Emplacement Favori</th>
     </thead>
     <tbody>
-      <tr>
-        <td class="contentCell">1</td>
-        <td class="contentCell">John Doe</td>
-        <td class="contentCell">123456789</td>
-        <td class="contentCell">1234 rue de la Paix</td>
-        <td class="contentCell">JohnDoe@yopmail.com</td>
-        <td class="contentCell">123456789</td>
-        <td class="contentCell">Banque Nationale</td>
-        <td class="contentCell">123456789</td>
-        <td class="contentCell">1234 rue de la Paix</td>
-      </tr>
-      <tr>
-        <td class="contentCell">2</td>
-        <td class="contentCell">Jane Doe</td>
-        <td class="contentCell">123456789</td>
-        <td class="contentCell">1234 rue de la Paix</td>
-        <td class="contentCell">JaneDoe@yopmail.com</td>
-        <td class="contentCell">123456789</td>
-        <td class="contentCell">Banque Nationale</td>
-        <td class="contentCell">123456789</td>
-        <td class="contentCell">1234 rue de la Paix</td>
+      <tr *ngFor="let member of filteredMembers">
+        <td class="contentCell">{{ member.nomembre }}</td>
+        <td class="contentCell">{{ member.nom }}</td>
+        <td class="contentCell">{{ member.nopermisdeconduire }}</td>
+        <td class="contentCell">{{ member.adressepostale }}</td>
+        <td class="contentCell">{{ member.adressecourriel }}</td>
+        <td class="contentCell">{{ member.nocomptebancaire }}</td>
+        <td class="contentCell">{{ member.nombanque }}</td>
+        <td class="contentCell">{{ member.motdepasse }}</td>
+        <td class="contentCell">{{ member.emplacementfavori }}</td>
       </tr>
     </tbody>
   </table>
