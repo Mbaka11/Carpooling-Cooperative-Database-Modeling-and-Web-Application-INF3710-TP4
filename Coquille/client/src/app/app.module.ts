@@ -8,10 +8,12 @@ import { AppComponent } from "./app.component";
 import { CommunicationService } from "./services/communication.service";
 import { AppMaterialModule } from './modules/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MemberPageComponent } from './pages/member-page/member-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MemberPageComponent
   ],
   imports: [
     CommonModule,
