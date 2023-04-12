@@ -1,6 +1,16 @@
 import { injectable } from "inversify";
 import * as pg from "pg";
 import "reflect-metadata";
+// import { Reservation } from "../../../common/tables/Reservations";
+
+export interface Reservation {
+  idreservation: number;
+  datedebut: Date;
+  datefin: Date;
+  exigences: string;
+  nomembre: number;
+  noimmatriculation: string;
+}
 
 @injectable()
 export class DatabaseService {
@@ -15,23 +25,79 @@ export class DatabaseService {
 
   public pool: pg.Pool = new pg.Pool(this.connectionConfig);
 
-  // public async getAllMembres(): Promise<any> {
-  //   const client: pg.PoolClient = await this.pool.connect();
-  //   const result = await client.query(
-  //     "SELECT * FROM Coovoiturage_schema.Membre"
-  //   );
-  //   client.release();
-  //   console.log(result.rows);
-  //   return result.rows;
-  // }
-
   public async getAllMembres(): Promise<pg.QueryResult> {
     const client: pg.PoolClient = await this.pool.connect();
     const result = await client.query(
       "SELECT * FROM Coovoiturage_schema.Membre;"
     );
     client.release();
-    console.log(result);
     return result;
+  }
+
+  public async getAllReservations(): Promise<pg.QueryResult> {
+    const client: pg.PoolClient = await this.pool.connect();
+    const result = await client.query(
+      "SELECT * FROM Coovoiturage_schema.Reservation;"
+    );
+    // const reservations: Reservation[] = result.rows;
+    // console.log(reservations);
+    client.release();
+    return result;
+  }
+
+  public async createReservation(
+    reservation: Reservation
+  ): Promise<pg.QueryResult> {
+    const client = await this.pool.connect();
+
+    if (
+      !reservation.idreservation ||
+      !reservation.datedebut ||
+      !reservation.datefin ||
+      !reservation.nomembre ||
+      !reservation.noimmatriculation
+    ) {
+      throw new Error("Missing reservation information");
+    }
+
+    if (reservation.datefin < reservation.datedebut) {
+      throw new Error("La date de fin doit être après la date de début");
+    }
+
+    const allReservations = await this.getAllReservations();
+    const reservations: Reservation[] = allReservations.rows;
+
+    for (const res of reservations) {
+      if (res.noimmatriculation === reservation.noimmatriculation) {
+        reservation.datedebut = new Date(reservation.datedebut);
+        reservation.datefin = new Date(reservation.datefin);
+        if (
+          (res.datedebut.toISOString().substring(0, 10) >=
+            reservation.datedebut.toISOString().substring(0, 10) &&
+            res.datedebut.toISOString().substring(0, 10) <=
+              reservation.datefin.toISOString().substring(0, 10)) ||
+          (res.datefin.toISOString().substring(0, 10) >=
+            reservation.datedebut.toISOString().substring(0, 10) &&
+            res.datefin.toISOString().substring(0, 10) <=
+              reservation.datefin.toISOString().substring(0, 10))
+        ) {
+          throw new Error("La voiture est déjà réservée pour cette période");
+        }
+      }
+    }
+
+    const values: string[] = [
+      reservation.idreservation.toString(),
+      reservation.datedebut.toString(),
+      reservation.datefin.toString(),
+      reservation.exigences,
+      reservation.nomembre.toString(),
+      reservation.noimmatriculation,
+    ];
+    const queryText: string = `INSERT INTO Coovoiturage_schema.Reservation VALUES($1,$2,$3,$4,$5,$6);`;
+
+    const res = await client.query(queryText, values);
+    client.release();
+    return res;
   }
 }

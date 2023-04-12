@@ -36,17 +36,6 @@
   background-color: var(--theme-blue-hover);
 }
 
-.btn {
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: var(--theme-blue);
-  margin: 20px;
-  color: white;
-  font-size: 25px;
-  font-weight: 800;
-  font-family: "Varela Round", sans-serif;
-}
-
 [placeholder]:empty::before {
   content: attr(placeholder);
   color: var(--theme-blue-placeholder);
@@ -62,24 +51,4 @@
 
 .blank_row:not(.nohover):hover {
   color: var(--theme-blue);
-}
-
-.actionCell {
-  padding: 10px;
-  color: var(--theme-blue);
-}
-
-.deletebtn {
-  border-radius: 4px;
-  color: white;
-  background-color: var(--theme-purple);
-  border-style: none;
-}
-
-.submitbtn {
-  border-radius: 4px;
-  border-style: none;
-  margin-right: 10px;
-  color: white;
-  background-color: var(--theme-blue);
 }

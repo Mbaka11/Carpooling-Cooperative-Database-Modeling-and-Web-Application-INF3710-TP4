@@ -12,3 +12,12 @@ INSERT INTO Coovoiturage_schema.Membre VALUES (3, 'John Smith', 'P3', '1234 rue 
 INSERT INTO Coovoiturage_schema.Membre VALUES (4, 'Gabriel Martinelli', 'P4', '1234 rue de la Paix', 'GabMar@yahoo.com', 4, 'London Bank', 'mdp4', 'London');
 INSERT INTO Coovoiturage_schema.Membre VALUES (5, 'Neymar', 'P5', '1234 rue do Brasil', 'Neymar@gmail.com', 5, 'Brazil Bank', 'mdp5', 'Rio de Janeiro');
 
+INSERT INTO Coovoiturage_schema.Vehicule VALUES ('1', 1000, '2019-01-01', 10.56 , 15.90 , 12.90 , 'Montreal');
+INSERT INTO Coovoiturage_schema.Vehicule VALUES ('2', 1000, '2019-01-01', 10.56 , 15.90 , 12.90 , 'Miami');
+INSERT INTO Coovoiturage_schema.Vehicule VALUES ('3', 1000, '2019-01-01', 10.56 , 15.90 , 12.90 , 'Quebec');
+INSERT INTO Coovoiturage_schema.Vehicule VALUES ('4', 1000, '2019-01-01', 10.56 , 15.90 , 12.90 , 'London');
+INSERT INTO Coovoiturage_schema.Vehicule VALUES ('5', 1000, '2019-01-01', 10.56 , 15.90 , 12.90 , 'Rio de Janeiro');
+
+INSERT INTO Coovoiturage_schema.Reservation VALUES (1, DATE'2019-01-01', DATE'2019-01-02','siege bebe', 1, '1');
+INSERT INTO Coovoiturage_schema.Reservation VALUES (2, DATE'2019-01-01', DATE'2019-01-02','siege bebe', 2, '2');
+INSERT INTO Coovoiturage_schema.Reservation VALUES (3, DATE'2019-01-01', DATE'2019-01-02','siege bebe', 3, '3');
