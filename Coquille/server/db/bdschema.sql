@@ -17,7 +17,9 @@ CREATE TABLE IF NOT EXISTS Coovoiturage_schema.Vehicule(
     consommationEssence DECIMAL(5,2) NOT NULL,
     tarifHoraire DECIMAL(5,2) NOT NULL,
     tarifKilometrage DECIMAL(5,2) NOT NULL,
-    Emplacement VARCHAR(50) NOT NULL,
+    marque VARCHAR(50) NOT NULL,
+    modele VARCHAR(50) NOT NULL,
+    Emplacement VARCHAR(50),
     PRIMARY KEY(noImmatriculation),
     FOREIGN KEY(Emplacement) REFERENCES Coovoiturage_schema.Emplacement(nom)
 );
