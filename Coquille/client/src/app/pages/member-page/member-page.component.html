@@ -1,0 +1,57 @@
+<div id="room">
+  <h1>Membres</h1>
+
+  <div class="divider"></div>
+
+  <div class="container contentSelect">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="searchMember"
+          >Search<mat-icon>search</mat-icon></span
+        >
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Tapez le nom d'un membre ici et appuyez sur ENTER"
+        aria-label="searchMember"
+        aria-describedby="searchMember"
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="onEnter($event.target.value)"
+      />
+    </div>
+  </div>
+
+  <table
+    id="ht"
+    align="center"
+    border="1"
+    width="1000"
+    class="table-striped table-hover"
+  >
+    <thead class="roomsheader">
+      <th class="contentCell">No Membre</th>
+      <th class="contentCell">Nom</th>
+      <th class="contentCell">No Permis de Conduire</th>
+      <th class="contentCell">Adresse Postale</th>
+      <th class="contentCell">Adresse Courriel</th>
+      <th class="contentCell">No Compte Bancaire</th>
+      <th class="contentCell">Nom Banque</th>
+      <th class="contentCell">Mot de Passe</th>
+      <th class="contentCell">Emplacement Favori</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let member of filteredMembers">
+        <td class="contentCell">{{ member.nomembre }}</td>
+        <td class="contentCell">{{ member.nom }}</td>
+        <td class="contentCell">{{ member.nopermisdeconduire }}</td>
+        <td class="contentCell">{{ member.adressepostale }}</td>
+        <td class="contentCell">{{ member.adressecourriel }}</td>
+        <td class="contentCell">{{ member.nocomptebancaire }}</td>
+        <td class="contentCell">{{ member.nombanque }}</td>
+        <td class="contentCell">{{ member.motdepasse }}</td>
+        <td class="contentCell">{{ member.emplacementfavori }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

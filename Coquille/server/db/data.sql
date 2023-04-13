@@ -1,5 +1,4 @@
-TRUNCATE TABLE Coovoiturage_schema.Vehicule CASCADE;
-TRUNCATE TABLE Coovoiturage_schema.Emplacement CASCADE;
+SET search_path TO Coovoiturage_schema;
 
 INSERT INTO Coovoiturage_schema.Emplacement (nom, adresse, carte, nbEmplacement) VALUES
 ('Place de la Chapelle', '310 rue Pascal, Laval, QC, J3G1G6', '34.654, 87.832', 20),
@@ -45,6 +44,3 @@ INSERT INTO Coovoiturage_schema.Reservation (idReservation, dateDebut, dateFin, 
 (235613, '2023-03-22 12:00:00', '2023-03-25 12:00:00', 'petit café', 987143, 'WS7E63'),
 (764534, '2023-01-20 09:00:00', '2023-01-21 09:00:00', 'voiture propre', 631571, '1J4F9A'),
 (353744, '2023-01-23 09:00:00', '2023-01-25 09:00:00', 'présentation agréable', 631571, '1J4F9A');
-
-INSERT INTO Coovoiturage_schema.Utilisation (idUtilisation, odometreDebut, odometreFin, idReservation, idFacture) VALUES
-(573136, 153601, 153631, 235613, 414612);

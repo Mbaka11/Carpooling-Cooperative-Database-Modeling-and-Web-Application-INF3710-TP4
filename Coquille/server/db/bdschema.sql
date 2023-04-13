@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS Coovoiturage_schema.AssuranceAutomobile(
 
 CREATE TABLE IF NOT EXISTS Coovoiturage_schema.Membre(
     noMembre INT NOT NULL,
+    nom VARCHAR(255) NOT NULL,
     noPermisDeConduire VARCHAR(50) NOT NULL,
     adressePostale VARCHAR(255) NOT NULL,
     adresseCourriel VARCHAR(255) NOT NULL,
