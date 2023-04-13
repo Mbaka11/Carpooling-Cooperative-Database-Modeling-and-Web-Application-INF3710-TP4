@@ -25,10 +25,10 @@ INSERT INTO Coovoiturage_schema.Reguliere (noImmatriculation) VALUES
 INSERT INTO Coovoiturage_schema.MiniCamionnette (noImmatriculation) VALUES
 ('4K9D3G');
 
-INSERT INTO Coovoiturage_schema.Membre (noMembre, noPermisDeConduire, adressePostale, adresseCourriel, noCompteBancaire, nomBanque, motDePasse, emplacementFavori) VALUES
-(987143, 'JFII38721K', '93 rue Sevran, Laval, QC, H9K1Y5', 'smallenergy@gmail.com', 742824642, 65473296, 'grangou431', 'Parc Ophille'),
-(452643, 'GHJU4932JM', '667 rue Mangemeau, Laval, QC, K9S3G5', 'legrandjg@gmail.com', 674413234, 98503845, 'motdepassecomplique', 'Place de la Chapelle'),
-(631571, 'NU183FN328', '5532 rue Parlezom, Sorel-Tracy, QC, J3F4G6', 'magicmonster@gmail.com', 315465533, 48310481, 'mangezdupoulet', 'Plage Idéal');
+INSERT INTO Coovoiturage_schema.Membre (noMembre, nom, noPermisDeConduire, adressePostale, adresseCourriel, noCompteBancaire, nomBanque, motDePasse, emplacementFavori) VALUES
+(987143,'Muller Guerre', 'JFII38721K', '93 rue Sevran, Laval, QC, H9K1Y5', 'smallenergy@gmail.com', 742824642, 65473296, 'grangou431', 'Parc Ophille'),
+(452643,'Jean-Claude Todibin', 'GHJU4932JM', '667 rue Mangemeau, Laval, QC, K9S3G5', 'legrandjg@gmail.com', 674413234, 98503845, 'motdepassecomplique', 'Place de la Chapelle'),
+(631571,'Lucas Kapoera', 'NU183FN328', '5532 rue Parlezom, Sorel-Tracy, QC, J3F4G6', 'magicmonster@gmail.com', 315465533, 48310481, 'mangezdupoulet', 'Plage Idéal');
 
 INSERT INTO Coovoiturage_schema.MembreAutopartage (noMembre, cotisationAnnuelle) VALUES 
 (987143, 600);

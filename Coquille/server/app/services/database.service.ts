@@ -1,6 +1,7 @@
 import { injectable } from "inversify";
 import * as pg from "pg";
 import "reflect-metadata";
+// FIXME
 // import { Reservation } from "../../../common/tables/Reservations";
 
 export interface Reservation {
@@ -17,7 +18,7 @@ export class DatabaseService {
   public connectionConfig: pg.ConnectionConfig = {
     user: "postgres",
     database: "TP4",
-    password: "Coopteam4",
+    password: "Emmerdeur2002",
     port: 5432, // Attention ! Peut aussi être 5433 pour certains utilisateurs
     host: "127.0.0.1",
     keepAlive: true,
@@ -83,7 +84,7 @@ export class DatabaseService {
         console.log(dateDebutRes);
         console.log(dateFinRes);
         if (
-          // check if existing reservation overlaps with new reservation
+          // TODO: check if existing reservation overlaps with new reservation
           (dateDebutRes >= dateDebut && dateDebutRes < dateFin) ||
           (dateFinRes > dateDebut && dateFinRes <= dateFin) ||
           (dateDebutRes < dateDebut && dateFinRes > dateFin)
