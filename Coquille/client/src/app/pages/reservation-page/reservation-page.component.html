@@ -30,7 +30,7 @@
         <td class="contentCell">{{ reservation.noimmatriculation }}</td>
       </tr>
 
-      <tr class="blank_row">
+      <tr class="blank_row" #newReservation>
         <td class="contentCell" contenteditable="false" #newReservationId></td>
         <td
           class="contentCell"
@@ -49,7 +49,9 @@
           contenteditable="true"
           placeholder="Exigences"
           #newExigences
-        ></td>
+        >
+          {{ newExigences.textContent ? newExigences.textContent : "Aucune" }}
+        </td>
         <td
           class="contentCell"
           contenteditable="true"

@@ -8,8 +8,8 @@ import { NextFunction, Request, Response } from "express";
 
 export interface Reservation {
   idreservation: number;
-  datedebut: Date;
-  datefin: Date;
+  datedebut: string;
+  datefin: string;
   exigences: string;
   nomembre: number;
   noimmatriculation: string;
@@ -42,8 +42,8 @@ export class DatabaseController {
         .getAllReservations()
         .then((result: pg.QueryResult) => {
           res.json(result.rows);
-          // console.log("Reservations CONTROLLER: ");
-          // console.log(result.rows);
+          console.log("Reservations CONTROLLER: ");
+          console.log(result.rows);
         })
         .catch((e: Error) => {
           console.error(e.stack);

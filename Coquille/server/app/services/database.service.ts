@@ -5,8 +5,8 @@ import "reflect-metadata";
 
 export interface Reservation {
   idreservation: number;
-  datedebut: Date;
-  datefin: Date;
+  datedebut: string;
+  datefin: string;
   exigences: string;
   nomembre: number;
   noimmatriculation: string;
@@ -69,18 +69,28 @@ export class DatabaseService {
 
     for (const res of reservations) {
       if (res.noimmatriculation === reservation.noimmatriculation) {
-        reservation.datedebut = new Date(reservation.datedebut);
-        reservation.datefin = new Date(reservation.datefin);
+        console.log(res);
+        console.log("NOIMMATRICULATION");
+        console.log(res.noimmatriculation, reservation.noimmatriculation);
+        const dateDebut = new Date(reservation.datedebut);
+        const dateFin = new Date(reservation.datefin);
+        const dateDebutRes = new Date(res.datedebut);
+        const dateFinRes = new Date(res.datefin);
+        console.log("DATES");
+        console.log(dateDebut);
+        console.log(dateFin);
+        console.log("DATES RES");
+        console.log(dateDebutRes);
+        console.log(dateFinRes);
         if (
-          (res.datedebut.toISOString().substring(0, 10) >=
-            reservation.datedebut.toISOString().substring(0, 10) &&
-            res.datedebut.toISOString().substring(0, 10) <=
-              reservation.datefin.toISOString().substring(0, 10)) ||
-          (res.datefin.toISOString().substring(0, 10) >=
-            reservation.datedebut.toISOString().substring(0, 10) &&
-            res.datefin.toISOString().substring(0, 10) <=
-              reservation.datefin.toISOString().substring(0, 10))
+          // check if existing reservation overlaps with new reservation
+          (dateDebutRes >= dateDebut && dateDebutRes < dateFin) ||
+          (dateFinRes > dateDebut && dateFinRes <= dateFin) ||
+          (dateDebutRes < dateDebut && dateFinRes > dateFin)
         ) {
+          console.log("La voiture est déjà réservée pour cette période");
+          console.log(res.datedebut);
+          console.log(res.datefin);
           throw new Error("La voiture est déjà réservée pour cette période");
         }
       }

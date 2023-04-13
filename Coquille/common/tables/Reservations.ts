@@ -1,7 +1,7 @@
 export interface Reservation {
   idreservation: number;
-  datedebut: Date;
-  datefin: Date;
+  datedebut: string;
+  datefin: string;
   exigences: string;
   nomembre: number;
   noimmatriculation: string;
