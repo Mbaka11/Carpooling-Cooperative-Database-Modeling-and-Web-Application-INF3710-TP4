@@ -41,19 +41,14 @@ export class ReservationPageComponent {
 
   public addReservation(): void {
     console.log("addReservation");
-    const dateD = new Date("2019-01-01T05:00:00.000Z");
-    const dateISOString = dateD.toISOString();
 
     const reservation: Reservation = {
       idreservation: this.getLastReservationId() + 1,
-      datedebut: dateISOString,
-      datefin: dateISOString,
+      datedebut: this.newDateDebut.nativeElement.innerText,
+      datefin: this.newDateFin.nativeElement.innerText,
       exigences: this.newExigences.nativeElement.innerText,
-      // exigences: "1",
       nomembre: this.newNomembre.nativeElement.innerText,
-      // nomembre: 1,
       noimmatriculation: this.newNoimmatriculation.nativeElement.innerText,
-      // noimmatriculation: "1",
     };
 
     this.communicationService
