@@ -15,8 +15,8 @@
       <th class="contentCell">Date début</th>
       <th class="contentCell">Date fin</th>
       <th class="contentCell">Exigences</th>
-      <th class="contentCell">No Membre</th>
-      <th class="contentCell">No Immatriculation</th>
+      <th class="contentCell">№ Membre</th>
+      <th class="contentCell">№ Immatriculation</th>
     </thead>
     <tbody>
       <tr *ngFor="let reservation of reservations">
@@ -35,13 +35,13 @@
         <td
           class="contentCell"
           contenteditable="true"
-          placeholder="Date de début"
+          placeholder="AAAA-MM-JJ"
           #newDateDebut
         ></td>
         <td
           class="contentCell"
           contenteditable="true"
-          placeholder="Date de fin"
+          placeholder="AAAA-MM-JJ"
           #newDateFin
         ></td>
         <td
@@ -55,13 +55,13 @@
         <td
           class="contentCell"
           contenteditable="true"
-          placeholder="No de membre"
+          placeholder="№ de membre"
           #newNoMembre
         ></td>
         <td
           class="contentCell"
           contenteditable="true"
-          placeholder="No d'immatriculation"
+          placeholder="№ d'immatriculation"
           #newNoImmatriculation
         ></td>
         <td class="contentCell"></td>
@@ -69,5 +69,5 @@
     </tbody>
   </table>
 
-  <button type="button" class="btn" (click)="TestAddReservation()">+</button>
+  <button type="button" class="btn" (click)="addReservation()">+</button>
 </div>

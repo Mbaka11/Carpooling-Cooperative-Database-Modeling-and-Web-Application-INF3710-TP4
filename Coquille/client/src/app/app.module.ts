@@ -10,10 +10,9 @@ import { AppMaterialModule } from "./modules/material.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MemberPageComponent } from "./pages/member-page/member-page.component";
 import { ReservationPageComponent } from "./pages/reservation-page/reservation-page.component";
-import { AjoutReservationPageComponent } from './pages/ajout-reservation-page/ajout-reservation-page.component';
 
 @NgModule({
-  declarations: [AppComponent, MemberPageComponent, ReservationPageComponent, AjoutReservationPageComponent],
+  declarations: [AppComponent, MemberPageComponent, ReservationPageComponent],
   imports: [
     CommonModule,
     BrowserModule,

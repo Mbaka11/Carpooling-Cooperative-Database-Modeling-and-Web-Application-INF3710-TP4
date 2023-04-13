@@ -39,8 +39,8 @@ export class ReservationPageComponent {
     return this.reservations[this.reservations.length - 1].idreservation;
   }
 
-  public TestAddReservation(): void {
-    console.log("TestAddReservation");
+  public addReservation(): void {
+    console.log("addReservation");
     const dateD = new Date("2019-01-01T05:00:00.000Z");
     const dateISOString = dateD.toISOString();
 
