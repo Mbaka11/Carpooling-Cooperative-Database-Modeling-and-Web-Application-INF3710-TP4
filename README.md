@@ -8,8 +8,8 @@ Application Web d'autopartage.
 - Marsel Bakashov
 
 ## Pour utiliser l'application...
-- Assurez-vous d'avoir installé PostgreSQL (la version ^14 est utilisée pour ce projet).
-- Assurez-vous d'avoir installé Node (la version ^16 est utilisée pour ce projet).
+- Assurez-vous d'avoir installé PostgreSQL.
+- Assurez-vous d'avoir installé Node.
 - Allez dans `/client` et lancez la commande `npm ci` dans un terminal.
 - Allez dans `/server` et lancez la commande `npm ci` dans un terminal.
 - Allez dans `/server/app/services/database.service.ts` et modifiez `connectionConfig` avec les bons paramètres de votre BD. 
