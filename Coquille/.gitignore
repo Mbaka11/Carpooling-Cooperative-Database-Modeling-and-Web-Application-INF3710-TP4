@@ -1,2 +1,5 @@
-node_modules/
+Coquille/client/.angular/
+Coquille/client/node_modules/
+Coquille/server/node_modules/
+Coquille/server/out/
 
