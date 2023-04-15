@@ -4,15 +4,16 @@ INSERT INTO Coovoiturage_schema.Emplacement (nom, adresse, carte, nbEmplacement)
 ('Place de la Chapelle', '310 rue Pascal, Laval, QC, J3G1G6', '34.654, 87.832', 20),
 ('Côte-des-Perron', '4213 rue Paname, Laval, QC, K4S8F4', '6476.5465, -564.3133', 15),
 ('Plage Idéal', '239 rue Bayard, Montréal, QC, O8J2F3', '45.652152, -73.757149', 45),
-('Parc Ophille', '1420 rue Court, Montréal, QC, L9D1D3', '45.535727, -73.761444', 20);
+('Parc Ophille', '1420 rue Court, Montréal, QC, L9D1D3', '45.535727, -73.761444', 20),
+('Avenue Belle-Char', '346 rue Poisette, Montréal, QC, G7J3G4', '45.537787, -73.721494', 15);
 
 
-INSERT INTO Coovoiturage_schema.Vehicule (noImmatriculation, odometre, dateMiseEnService, consommationEssence, tarifHoraire, tarifKilometrage, marque, modele, Emplacement) VALUES 
-('WS7E63', 153631, '2001-10-10', 4, 10.5, 5, 'Toyota', 'Corolla', 'Place de la Chapelle'),
-('1R3N6U', 104000, '2011-11-11', 3.5, 6.5, 2, 'Hyundai', 'Dantes', 'Côte-des-Perron'),
-('5H6J8L', 2346, '2001-10-11', 2.5, 20.5, 6, 'Hyundai', 'Agua', 'Plage Idéal'),
-('1J4F9A', 44134, '2021-03-20', 2, 10, 5, 'Kawai', 'Ine', 'Plage Idéal'),
-('4K9D3G', 76033, '2014-01-23', 6, 5.5, 2, 'Pantola', 'Maznati', NULL);
+INSERT INTO Coovoiturage_schema.Vehicule (noImmatriculation, odometre, maxOdometre, dateMiseEnService, consommationEssence, tarifHoraire, tarifKilometrage, marque, modele, Emplacement) VALUES 
+('WS7E63', 153631, 200000, '2001-10-10', 4, 10.5, 5, 'Toyota', 'Corolla', 'Place de la Chapelle'),
+('1R3N6U', 104000, 150000, '2011-11-11', 3.5, 6.5, 2, 'Hyundai', 'Dantes', 'Côte-des-Perron'),
+('5H6J8L', 2346, 150000, '2001-10-11', 2.5, 20.5, 6, 'Hyundai', 'Agua', 'Plage Idéal'),
+('1J4F9A', 44134, 150000, '2021-03-20', 2, 10, 5, 'Kawai', 'Ine', 'Plage Idéal'),
+('4K9D3G', 76033, 180000, '2014-01-23', 6, 5.5, 2, 'Pantola', 'Maznati', NULL);
 
 INSERT INTO Coovoiturage_schema.Hybride (noImmatriculation, kilowattsRecharge) VALUES
 ('1R3N6U', 15),
@@ -44,3 +45,6 @@ INSERT INTO Coovoiturage_schema.Reservation (idReservation, dateDebut, dateFin, 
 (235613, '2023-03-22 12:00:00', '2023-03-25 12:00:00', 'petit café', 987143, 'WS7E63'),
 (764534, '2023-01-20 09:00:00', '2023-01-21 09:00:00', 'voiture propre', 631571, '1J4F9A'),
 (353744, '2023-01-23 09:00:00', '2023-01-25 09:00:00', 'présentation agréable', 631571, '1J4F9A');
+
+INSERT INTO Coovoiturage_schema.Utilisation (idUtilisation, odometreDebut, odometreFin, idReservation, idFacture) VALUES 
+(566575, 153625, 153631, 235613, 414612);

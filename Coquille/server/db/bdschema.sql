@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS Coovoiturage_schema.Emplacement(
 CREATE TABLE IF NOT EXISTS Coovoiturage_schema.Vehicule(
     noImmatriculation VARCHAR(50) NOT NULL,
     odometre INT NOT NULL,
+    maxOdometre INT NOT NULL,
     dateMiseEnService DATE NOT NULL,
     consommationEssence DECIMAL(5,2) NOT NULL,
     tarifHoraire DECIMAL(5,2) NOT NULL,
