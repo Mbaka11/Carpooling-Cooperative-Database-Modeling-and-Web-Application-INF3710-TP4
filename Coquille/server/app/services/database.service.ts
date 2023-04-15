@@ -39,8 +39,6 @@ export class DatabaseService {
     const result = await client.query(
       "SELECT * FROM Coovoiturage_schema.Reservation;"
     );
-    // const reservations: Reservation[] = result.rows;
-    // console.log(reservations);
     client.release();
     return result;
   }
@@ -69,28 +67,15 @@ export class DatabaseService {
 
     for (const res of reservations) {
       if (res.noimmatriculation === reservation.noimmatriculation) {
-        console.log(res);
-        console.log("NOIMMATRICULATION");
-        console.log(res.noimmatriculation, reservation.noimmatriculation);
         const dateDebut = new Date(reservation.datedebut);
         const dateFin = new Date(reservation.datefin);
         const dateDebutRes = new Date(res.datedebut);
         const dateFinRes = new Date(res.datefin);
-        console.log("DATES");
-        console.log(dateDebut);
-        console.log(dateFin);
-        console.log("DATES RES");
-        console.log(dateDebutRes);
-        console.log(dateFinRes);
         if (
-          // check if existing reservation overlaps with new reservation
           (dateDebutRes >= dateDebut && dateDebutRes < dateFin) ||
           (dateFinRes > dateDebut && dateFinRes <= dateFin) ||
           (dateDebutRes < dateDebut && dateFinRes > dateFin)
         ) {
-          console.log("La voiture est déjà réservée pour cette période");
-          console.log(res.datedebut);
-          console.log(res.datefin);
           throw new Error("La voiture est déjà réservée pour cette période");
         }
       }

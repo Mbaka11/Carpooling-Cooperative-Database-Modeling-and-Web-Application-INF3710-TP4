@@ -42,8 +42,6 @@ export class DatabaseController {
         .getAllReservations()
         .then((result: pg.QueryResult) => {
           res.json(result.rows);
-          console.log("Reservations CONTROLLER: ");
-          console.log(result.rows);
         })
         .catch((e: Error) => {
           console.error(e.stack);
@@ -69,8 +67,6 @@ export class DatabaseController {
           .createReservation(reservation)
           .then((result: pg.QueryResult) => {
             res.status(201).json(result.rowCount);
-            console.log("Reservation créée");
-            console.log(reservation);
           })
           .catch((e: Error) => {
             res.status(400).json(-1);

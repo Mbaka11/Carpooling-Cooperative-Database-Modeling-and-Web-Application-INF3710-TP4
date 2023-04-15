@@ -40,8 +40,6 @@ export class ReservationPageComponent {
   }
 
   public addReservation(): void {
-    console.log("addReservation");
-
     const reservation: Reservation = {
       idreservation: this.getLastReservationId() + 1,
       datedebut: this.newDateDebut.nativeElement.innerText,
