@@ -29,7 +29,6 @@ export class MemberPageComponent {
 
   onEnter(string: string) {
     this.searchQuery = string.toLowerCase();
-    console.log(this.searchQuery);
 
     if (this.searchQuery) {
       this.filteredMembers = this.members.filter((member) => {
@@ -38,6 +37,5 @@ export class MemberPageComponent {
     } else {
       this.filteredMembers = this.members;
     }
-    console.log(this.filteredMembers);
   }
 }
