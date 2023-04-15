@@ -29,5 +29,5 @@ Application Web d'autopartage.
 - port: 5432,
 - host: "127.0.0.1",
 - keepAlive: true,
-- Allez dans `/server` et faites la commande `npm start` dans un terminal. Le serveur est lancé au `localhost:3000` par défaut.
+- Allez dans `/server` et faites la commande `npm start` dans un terminal. Le serveur est lancé au `localhost:4000` par défaut.
 - Allez dans `/client` et faites la commande `npm start` dans un terminal. Le client est lancé au `localhost:4200` par défaut.
