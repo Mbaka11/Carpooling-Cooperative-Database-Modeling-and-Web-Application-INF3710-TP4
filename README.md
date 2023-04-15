@@ -15,7 +15,7 @@ Application Web d'autopartage.
 - Allez dans `/server/app/services/database.service.ts` et modifiez `connectionConfig` avec les bons paramètres de votre BD. 
 - Sur PGAdmin, cliquez sur Query Tool et ouvrez le fichier bdschema.sql fourni et lancez-le.
 - Insérez les données en répétant l'étape précédente avec le fichier data.sql fourni.
-- Allez dans `/client` et lancez la commande `npm start` dans un terminal. (Si une question vous est posé dans le terminal, entrez 'n')
+- Allez dans `/client` et lancez la commande `npm start` dans un terminal. (Si une question vous est posée dans le terminal, entrez "n")
 - Allez dans `/server` et lancez la commande `npm start` dans un terminal.
 
 ## Exemple de configuration :
